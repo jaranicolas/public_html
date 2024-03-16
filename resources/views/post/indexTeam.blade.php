@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container" id="main-container">
-        <div class="row ">
+        <div class="row ">s
             <div class="col-12 col-12__table">
                 <h2>Lista de publicaciones</h2>
                 <p>Aquí puedes ver las publicaciones de tu web, editarlas o borrarlas.</p>
