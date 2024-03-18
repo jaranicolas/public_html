@@ -26,17 +26,19 @@
                             <div class="col-12">
                                 <label for="description">Descripción</label>
                                 <textarea class="form-control form-control__textarea" name="description" id="description"
-                                    placeholder="Descripción de la publicación">{{-- {!! $product->short_notes !!} --}}</textarea>
-                            </div>
-                            <div class="col-12">
-                                <label for="content">Contenido</label>
-                                <textarea class="form-control form-control__textarea form-control__textarea--content" name="content" id="content"
-                                placeholder="Contenido de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
-                            </div>
-                            <div class="col-6 input-group">
-                                <label for="photo">Imágen</label>
-                                <input type="file" class="form-control form-control__photo" accept="image/*"
+                                    placeholder="Descripción de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
+                                    <p class="fade-txt">Sólo visible para el equipo.</p>
+                                </div>
+                                <div class="col-12">
+                                    <label for="content">Contenido</label>
+                                    <textarea class="form-control form-control__textarea form-control__textarea--content" name="content" id="content"
+                                    placeholder="Contenido de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
+                                </div>
+                                <div class="col-6 input-group">
+                                    <label for="photo">Imágen</label>
+                                    <input type="file" class="form-control form-control__photo" accept="image/*"
                                     name="photo" id="photo">
+                                    <p class="fade-txt">Recomendable: El ancho de la imagen mayor al alto.</p>
                             </div>
                             <div class="row row--double">
                                 <div class="col-5">

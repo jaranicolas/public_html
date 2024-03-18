@@ -11,11 +11,11 @@
     <title>{{ $title ?? config('app.name', 'San Isidro Salud') }}</title>
 
     <!-- Styles -->
-    <link href="{{ url('public/resources/css/bootstrap.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ url('public/resources/css/style.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url('./resources/css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url('./resources/css/style.css') }}" type="text/css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script defer src="{{ url('public/resources/js/bootstrap.bundle.js') }}" type="text/javascript"></script>
+    <script defer src="{{ url('./resources/js/bootstrap.bundle.js') }}" type="text/javascript"></script>
 
     <!-- Fonts -->
 </head>
@@ -24,14 +24,14 @@
     <div id="app">
         <nav class="navbar">
             <a class="navbar-logo" href="{{ route('home') }}">
-                <img src="{{ url('public/resources/img/logo-003466.jpg') }}" alt="San Isidro">
+                <img src="{{ url('./resources/img/logo-003466.jpg') }}" alt="San Isidro">
             </a>
             <a class="navbar-brand" href="{{ route('home') }}">
                 <h1>Clínica San Isidro</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="{{ __('Toggle navigation') }}">
-                <img src="{{ url('public/resources/img/white-menu.png') }}" alt="Menú">
+                <img src="{{ url('./resources/img/white-menu.png') }}" alt="Menú">
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">

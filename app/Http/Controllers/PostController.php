@@ -28,7 +28,12 @@ class PostController extends Controller
     {
         // Mostrar tabla con publicaciones
         $posts = Post::orderByDesc('post_order')->get();
-        return view('post.indexTeam', ['posts' => $posts]);
+        $creation_dates = [];
+        foreach ($posts as $position => $post) {
+            $creation_date = Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d/m/Y');
+            $creation_dates[$position] = $creation_date;
+        }
+        return view('post.indexTeam', ['posts' => $posts, 'creation_dates' => $creation_dates]);
     }
 
     public function create()
@@ -94,7 +99,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.show', ['post' => $post]);
     }
 
     /**
@@ -121,6 +126,5 @@ class PostController extends Controller
     {
         // Eliminar un registro
 
-        dd($post->destroy(3, 4, 5, 15, 16));
     }
 }

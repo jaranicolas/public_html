@@ -882,7 +882,7 @@ footer #upper-stripe {
     margin: 0;
     margin-left: 2vw;
     padding: 2vh 4vw 1vh 4vw;
-    font-size: 2.1vh;
+    font-size: 2.4vh;
 }
 
 .form-crud {
@@ -891,6 +891,12 @@ footer #upper-stripe {
 
 .form-crud label {
     margin: 0.5vh;
+    font-size: 2.2vh;
+}
+
+.form-crud .fade-txt {
+    font-size: 2vh;
+    color: #ddd;
 }
 
 .form-crud .col-12,
@@ -972,4 +978,69 @@ footer #upper-stripe {
 
 .col-12__table {
     margin-top: 17vh;
+}
+
+.col-12__table h2{
+    font-size: 2.8vh;
+    text-align: center;
+}
+
+.col-12__table p{
+    font-size: 2.2vh;
+    margin: 4vh 2vw 3vh 2vw;
+}
+
+.col-12__table table {
+    background-color: #124;
+    border-radius: 6vw;
+}
+
+.row-table-header {
+    font-weight: bold;
+}
+
+th{
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+    font-size: 3.6vw;
+    text-align: center;
+}
+
+tr{
+    border-bottom: 0.2vw solid #579;
+}
+
+td{
+    padding-top: 3vw;
+    padding-bottom: 2vw;
+    font-size: 3.3vw;
+}
+
+tr span{
+    font-size: 3.3vw;
+}
+
+thead tr:first-child{
+    border-bottom: 0.3vw solid #8df;
+}
+
+tr:last-child{
+    border: none;
+}
+
+th:first-child{
+    padding-left: 3vw;
+}
+tr td:first-child{
+    padding-left: 3vw;
+}
+
+tr td:last-child{
+    padding-right: 3vw;
+}
+
+.table-responsive img {
+    width: 33vw;
+    margin-right: 0;
+    border-radius: 2vw;
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
@@ -23,6 +24,7 @@ Route::get('', [App\Http\Controllers\PostController::class, 'index'])->name('hom
 Route::get('/equipo', [App\Http\Controllers\PostController::class, 'indexTeam'])->name('team');
 Route::get('/post', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::get('post/actualizar', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
 Route::get('post/eliminar', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
 
