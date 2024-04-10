@@ -99,6 +99,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        // Crear el modelo de render_order
         return view('post.show', ['post' => $post]);
     }
 

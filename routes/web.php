@@ -25,8 +25,8 @@ Route::get('/equipo', [App\Http\Controllers\PostController::class, 'indexTeam'])
 Route::get('/post', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
-Route::get('post/actualizar', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
-Route::get('post/eliminar', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
+Route::get('post/actualizar/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
+Route::get('post/eliminar/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
 
 // Páginas para las especialidades
 Route::get('especialidad/crear', [App\Http\Controllers\SpecialtieController::class, 'create'])->name('spec.create');

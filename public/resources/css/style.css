@@ -682,7 +682,8 @@ body {
     margin: 0;
 }
 
-#special-dates h2 {
+#special-dates h2,
+.col-12__table-title {
     text-align: center;
     color: #fff;
     font-family: 'anonymous_pro';
@@ -771,7 +772,7 @@ body {
     border-radius: 2.5vw;
 }
 
-#specialties {
+.type-1-post {
     background-color: #002;
 }
 
@@ -779,16 +780,16 @@ body {
     margin-top: 8vh;
 }
 
-#spec-card {
+.type-1-post-card {
     background-color: #002;
 }
 
-#spec-card-body {
+.type-1-post-card-body {
     background-color: #002;
     box-shadow: none;
 }
 
-#spec-card-title {
+.type-1-post-card-title {
     margin: 0 0 5vh 0;
     line-height: normal;
     font-size: 4vh;
@@ -799,30 +800,30 @@ body {
     color: #fff;
 }
 
-#specialties .card-img-top {
+.type-1-post .card-img-top {
     border-radius: 7vw;
     box-shadow: 0vw 0.5vw 3vw #4af;
 }
 
-#spec-card-text {
+p.card-text.type-1-post-card-text {
     margin-top: 1vh;
     font-size: 2.6vh;
     background-color: #002;
     font-family: 'inter';
 }
 
-#news {
+.type-2-post {
     margin: 9vh 0 0 0;
 }
 
-#news-card {
+.type-2-post-card {
     width: 100%;
     margin: 1vh auto;
     box-shadow: 0.3vh 0.3vh 1vh #37f;
     border-radius: 5vh;
 }
 
-#news-card-title {
+.type-2-post-card-title {
     margin: 3vh 5vw 3vh 5vw;
     line-height: normal;
     font-size: 3.8vh;
@@ -833,11 +834,24 @@ body {
     color: #fff;
 }
 
-#news-card-text {
+p.card-text.type-2-post-card-text {
     margin-top: 1vh;
     font-size: 2.6vh;
     background-color: transparent;
     font-family: 'inter';
+}
+
+.type-1-post .btn-standard,
+.type-2-post .btn-standard {
+    display: block;
+    margin: 0 auto;
+    background-color: #06d;
+    margin-bottom: 3vh;
+    margin-top: 6vw;
+    padding: 2.7vw;
+    font-size: 5vw;
+    letter-spacing: 0.2vw;
+    border-radius: 2.5vw;
 }
 
 footer {
@@ -861,11 +875,13 @@ footer #upper-stripe {
     text-align: center;
 }
 
+
+
 #phone-footer {
     display: inline-block;
 }
 
-.card-header{
+.card-header {
     border: none;
     outline: none;
 }
@@ -912,8 +928,7 @@ footer #upper-stripe {
     font-size: 1.8vh;
 }
 
-.form-select option {
-}
+.form-select option {}
 
 .form-control.form-control__textarea {
     height: 2.3vh;
@@ -931,7 +946,7 @@ footer #upper-stripe {
     flex-direction: column;
 }
 
-.form-control.form-control__photo{
+.form-control.form-control__photo {
     width: 80%;
 }
 
@@ -952,6 +967,7 @@ footer #upper-stripe {
     border-radius: 2vh;
     background-color: #049;
 }
+
 .error-item {
     font-size: 2.4vh;
 }
@@ -980,12 +996,12 @@ footer #upper-stripe {
     margin-top: 17vh;
 }
 
-.col-12__table h2{
+.col-12__table h2 {
     font-size: 2.8vh;
     text-align: center;
 }
 
-.col-12__table p{
+.col-12__table p {
     font-size: 2.2vh;
     margin: 4vh 2vw 3vh 2vw;
 }
@@ -999,43 +1015,44 @@ footer #upper-stripe {
     font-weight: bold;
 }
 
-th{
+th {
     padding-top: 4vw;
     padding-bottom: 3vw;
     font-size: 3.6vw;
     text-align: center;
 }
 
-tr{
+tr {
     border-bottom: 0.2vw solid #579;
 }
 
-td{
+td {
     padding-top: 3vw;
     padding-bottom: 2vw;
     font-size: 3.3vw;
 }
 
-tr span{
+tr span {
     font-size: 3.3vw;
 }
 
-thead tr:first-child{
+thead tr:first-child {
     border-bottom: 0.3vw solid #8df;
 }
 
-tr:last-child{
+tr:last-child {
     border: none;
 }
 
-th:first-child{
-    padding-left: 3vw;
-}
-tr td:first-child{
+th:first-child {
     padding-left: 3vw;
 }
 
-tr td:last-child{
+tr td:first-child {
+    padding-left: 3vw;
+}
+
+tr td:last-child {
     padding-right: 3vw;
 }
 
@@ -1043,4 +1060,10 @@ tr td:last-child{
     width: 33vw;
     margin-right: 0;
     border-radius: 2vw;
+}
+
+.col-12__table-title {
+    margin: 0;
+    font-size: 3.8vh;
+    letter-spacing: 0.2vw;
 }

@@ -19,7 +19,7 @@
                                             class="row-table-header">{{ $post->title }}</span><br>({{ $creation_dates[$position] }})<br>{{ $post->description }}</a>
                                 </td>
                                 <td><a href="{{ route('post.show', ['post' => $post->id]) }}"><img
-                                            src="{{ url("./storage/img/$post->photo") }}" class="card-img-top"
+                                            src="{{ url("public/storage/img/$post->photo") }}" class="card-img-top"
                                             alt="Contactanos para saber más"></a></td>
                             </tr>
                         @endforeach
