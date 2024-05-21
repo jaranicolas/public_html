@@ -108,7 +108,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $editPost = Post::find($post);
+        return view('post.create', ['post' => $editPost]);
     }
 
     /**

@@ -1,0 +1,19 @@
+CONTROLLERS
+
+index   OK
+show    OOO
+create  OK
+store   OK
+edit
+update
+destroy
+
+
+
+SECTIONS
+
+post
+message
+spec
+appo
+prescr

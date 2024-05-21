@@ -4,10 +4,28 @@
             <div class="col-12 col-12-a1">
                 <div class="card card--welcome">
                     <div class="card-body">
-                        <div class="card-header"><h3>Crear publicación</h3></div>
-                        <p class="card-text">Desde acá podés agregar nuevas publicaciones a la portada de la web.
+                        <div class="card-header">
+                            <h3>
+                                @if (isset($post))
+                                    Editar
+                                @else
+                                    Crear
+                                @endif publicación
+                            </h3>
+                        </div>
+                        <p class="card-text">
+                            @if (isset($post))
+                                Desde acá podés editar la publicación.
+                            @else
+                                Desde acá podés agregar nuevas publicaciones a la portada de la web.
+                            @endif
                         </p>
+                        @isset($post)
+                        <form class="form-crud" method="POST" action="{{ route('post.update', ['post' => $post]) }}"
+                        @else
                         <form class="form-crud" method="POST" action="{{ route('post.store') }}"
+                        @endisset
+
                             enctype="multipart/form-data">
                             <div class="col-12">
                                 <label for="title">Título</label>
@@ -27,18 +45,18 @@
                                 <label for="description">Descripción</label>
                                 <textarea class="form-control form-control__textarea" name="description" id="description"
                                     placeholder="Descripción de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
-                                    <p class="fade-txt">Sólo visible para el equipo.</p>
-                                </div>
-                                <div class="col-12">
-                                    <label for="content">Contenido</label>
-                                    <textarea class="form-control form-control__textarea form-control__textarea--content" name="content" id="content"
+                                <p class="fade-txt">Sólo visible para el equipo.</p>
+                            </div>
+                            <div class="col-12">
+                                <label for="content">Contenido</label>
+                                <textarea class="form-control form-control__textarea form-control__textarea--content" name="content" id="content"
                                     placeholder="Contenido de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
-                                </div>
-                                <div class="col-6 input-group">
-                                    <label for="photo">Imágen</label>
-                                    <input type="file" class="form-control form-control__photo" accept="image/*"
+                            </div>
+                            <div class="col-6 input-group">
+                                <label for="photo">Imágen</label>
+                                <input type="file" class="form-control form-control__photo" accept="image/*"
                                     name="photo" id="photo">
-                                    <p class="fade-txt">Recomendable: El ancho de la imagen mayor al alto.</p>
+                                <p class="fade-txt">Recomendable: El ancho de la imagen mayor al alto.</p>
                             </div>
                             <div class="row row--double">
                                 <div class="col-5">
@@ -65,8 +83,8 @@
                                     @endforeach
                                 </ul>
                             @endif
-                            <div class="control-group control-group--btn"><button
-                                    class="btn-standard">Publicar</button></div>
+                            <div class="control-group control-group--btn"><button class="btn-standard">Publicar</button>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -784,7 +784,7 @@ body {
     background-color: #002;
 }
 
-.type-1-post-card-body {
+.card-body.type-1-post-card-body {
     background-color: #002;
     box-shadow: none;
 }
@@ -856,7 +856,7 @@ p.card-text.type-2-post-card-text {
 
 footer {
     width: 93vw;
-    margin: 10vh auto 0 auto;
+    margin: 7vh auto 0 auto;
 }
 
 footer #upper-stripe {
@@ -928,8 +928,6 @@ footer #upper-stripe {
     font-size: 1.8vh;
 }
 
-.form-select option {}
-
 .form-control.form-control__textarea {
     height: 2.3vh;
 }
@@ -996,9 +994,30 @@ footer #upper-stripe {
     margin-top: 17vh;
 }
 
-.col-12__table h2 {
-    font-size: 2.8vh;
+.link-back {
+    display: inline-block;
+    width: fit-content;
+    width: fit-content;
+}
+
+.link-back img.back {
+    display: inline-block;
+    width: 7vw;
+    height: 3vh;
+}
+
+.col-12__table .col-12__table-title {
+    margin-left: 7vw;
+    margin-bottom: 0vh;
+    display: inline-block;
+    width: fit-content;
+    font-size: 3.2vh;
     text-align: center;
+    letter-spacing: 0;
+}
+
+.card-body .type-1-post-card-body {
+    margin-top: -5vh;
 }
 
 .col-12__table p {
@@ -1018,7 +1037,7 @@ footer #upper-stripe {
 th {
     padding-top: 4vw;
     padding-bottom: 3vw;
-    font-size: 3.6vw;
+    font-size: 4.2vw;
     text-align: center;
 }
 
@@ -1044,10 +1063,6 @@ tr:last-child {
     border: none;
 }
 
-th:first-child {
-    padding-left: 3vw;
-}
-
 tr td:first-child {
     padding-left: 3vw;
 }
@@ -1056,14 +1071,41 @@ tr td:last-child {
     padding-right: 3vw;
 }
 
-.table-responsive img {
-    width: 33vw;
-    margin-right: 0;
-    border-radius: 2vw;
+.show-post .table-responsive {
+    margin-top: 7vh;
+    width: 85vw;
+    height: fit-content;
 }
 
-.col-12__table-title {
-    margin: 0;
-    font-size: 3.8vh;
-    letter-spacing: 0.2vw;
+.show-post tbody td:first-child,
+.show-post tbody td:first-child span {
+    font-weight: bold;
+}
+
+.table-responsive img {
+    margin-bottom: 1vh;
+    border-radius: 4vw;
+}
+
+.actions {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.actions a:has(.btn-standard__destroy) {
+    margin-left: 6vw;
+}
+
+.actions .btn-standard {
+    padding: 0.5vh 1.6vw;
+    font-size: 4.7vw;
+    letter-spacing: 0.1vw;
+}
+
+.btn-standard__destroy {
+    box-shadow: 0 0vw 1.5vw #a75d70;
+    border: 1px solid #ff6a6a;
+    background-color: #ba0000;
 }
