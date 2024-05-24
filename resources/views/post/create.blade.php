@@ -54,16 +54,18 @@
                             <div class="col-12">
                                 <label for="description">Descripción</label>
                                 <textarea class="form-control form-control__textarea" name="description" id="description"
-                                    placeholder="Descripción de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
+                                    placeholder="Descripción de la publicación" required> @isset($post) {{ $post->description }} @endisset </textarea>
                                 <p class="fade-txt">Sólo visible para el equipo.</p>
                             </div>
                             <div class="col-12">
                                 <label for="content">Contenido</label>
                                 <textarea class="form-control form-control__textarea form-control__textarea--content" name="content" id="content"
-                                    placeholder="Contenido de la publicación" required>{{-- {!! $product->short_notes !!} --}}</textarea>
+                                    placeholder="Contenido de la publicación" required> @isset($post) {{ $post->content }} @endisset </textarea>
                             </div>
                             <div class="col-6 input-group">
                                 <label for="photo">Imágen</label>
+                                @isset($post) <img src="{{ url("./storage/img/$post->photo") }}" id="form-crud__img--edit" class=""
+                                alt="Contactanos para saber más"> @endisset
                                 <input type="file" class="form-control form-control__photo" accept="image/*"
                                     name="photo" id="photo">
                                 <p class="fade-txt">Recomendable: El ancho de la imagen mayor al alto.</p>
@@ -72,7 +74,7 @@
                                 <div class="col-5">
                                     <label for="btn">Texto del botón</label>
                                     <input type="text" class="form-control form-control__input" name="btn"
-                                        id="btn" value="Ingresar" required>
+                                        id="btn" value="@isset($post) {{ $post->btn }} @else Ingresar @endisset" required>
                                 </div>
                                 <div class="col-5">
                                     <label for="post_order">Orden del post</label>
@@ -93,7 +95,7 @@
                                     @endforeach
                                 </ul>
                             @endif
-                            {{-- Agregar HIDDEN con ID del post --}}
+                            <input type="hidden" name="id" value="@isset($post) {{$post->id}} @endisset"/>
                             <div class="control-group control-group--btn"><button class="btn-standard">Publicar</button>
                             </div>
                         </form>

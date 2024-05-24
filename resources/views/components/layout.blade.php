@@ -47,7 +47,7 @@
                         <a class="nav-link" href="#"><li class="nav-item">Especialidades</li></a>
                         <a class="nav-link" href="#"><li class="nav-item">Contacto</li></a>
                         <a class="nav-link" href="#"><li class="nav-item">Quienes somos</li></a>
-                        <a class="nav-link" href="./post"><li class="nav-item">Uso interno</li></a>
+                        <a class="nav-link" href="{{ route('team') }}"><li class="nav-item">Uso interno</li></a>
                     </ul>
                 </div>
             </div>

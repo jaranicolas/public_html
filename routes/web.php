@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -20,14 +19,14 @@ use Illuminate\Http\Request;
 */
 
 // Página de inicio
-Route::get('', [App\Http\Controllers\PostController::class, 'index'])->name('home');
-Route::get('/equipo', [App\Http\Controllers\PostController::class, 'indexTeam'])->name('team');
-Route::get('/post', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
-Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+Route::get('', [PostController::class, 'index'])->name('home');
+Route::get('/equipo', [PostController::class, 'indexTeam'])->name('team');
+Route::get('/post', [PostController::class, 'create'])->name('post.create');
+Route::post('/post', [PostController::class, 'store'])->name('post.store');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
-Route::get('post/actualizar/{post}', [App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
-Route::post('post/actualizar', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
-Route::get('post/eliminar/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
+Route::get('post/actualizar/{post}', [PostController::class, 'edit'])->name('post.edit');
+Route::put('post/actualizar/{post}', [PostController::class, 'update'])->name('post.update');
+Route::delete('post/eliminar/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
 // Páginas para las especialidades
 Route::get('especialidad/crear', [App\Http\Controllers\SpecialtieController::class, 'create'])->name('spec.create');
