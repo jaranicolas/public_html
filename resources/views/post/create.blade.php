@@ -20,25 +20,35 @@
                                 Desde acá podés agregar nuevas publicaciones a la portada de la web.
                             @endif
                         </p>
-                        @isset($post)
-                        <form class="form-crud" method="POST" action="{{ route('post.update', ['post' => $post]) }}"
-                        @else
-                        <form class="form-crud" method="POST" action="{{ route('post.store') }}"
-                        @endisset
-
+                        <form class="form-crud" method="POST"
+                            action=" 
+                                @if (isset($post)) {{ route('post.update', ['post' => $post]) }} 
+                                @else 
+                                {{ route('post.store') }} @endif"
                             enctype="multipart/form-data">
+
                             <div class="col-12">
                                 <label for="title">Título</label>
                                 <input type="text" class="form-control form-control__input" name="title"
-                                    id="title" placeholder="Título de la publicación" {{-- value="{!! $product->title !!}" --}}
-                                    required>
+                                    id="title" placeholder="Título de la publicación"
+                                    value="@isset($post) {{ $post->title }} @endisset" required>
                             </div>
                             <div class="col-6">
                                 <label for="type">Tipo de post</label>
                                 <select class="form-select form-select__type" name="type" id="type"
                                     aria-label="Seleccionar tipo de publicación">
-                                    <option value="1" selected>Estándar</option>
-                                    <option value="2">Tarjeta</option>
+                                    @if (isset($post))
+                                        @if ($post->type == '1')
+                                            <option value="1" selected>Estándar</option>
+                                            <option value="2">Tarjeta</option>
+                                        @else
+                                            <option value="1">Estándar</option>
+                                            <option value="2" selected>Tarjeta</option>
+                                        @endif
+                                    @else
+                                        <option value="1">Estándar</option>
+                                        <option value="2">Tarjeta</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="col-12">
@@ -83,6 +93,7 @@
                                     @endforeach
                                 </ul>
                             @endif
+                            {{-- Agregar HIDDEN con ID del post --}}
                             <div class="control-group control-group--btn"><button class="btn-standard">Publicar</button>
                             </div>
                         </form>

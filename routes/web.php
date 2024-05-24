@@ -26,7 +26,7 @@ Route::get('/post', [App\Http\Controllers\PostController::class, 'create'])->nam
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::get('post/actualizar/{post}', [App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
-Route::post('post/actualizar/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
+Route::post('post/actualizar', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
 Route::get('post/eliminar/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
 
 // Páginas para las especialidades

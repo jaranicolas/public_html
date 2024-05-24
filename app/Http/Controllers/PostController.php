@@ -50,7 +50,7 @@ class PostController extends Controller
     {
         session_start();
         $request->validate([
-            'title' => 'required|string|required|max:40',
+            'title' => 'required|string|max:40',
             'description' => 'string',
             'content' => 'required|string|min:4',
             'post_order' => 'required',
@@ -58,23 +58,16 @@ class PostController extends Controller
             'photo' => ['required', RulesFile::image()->min('10kb')->max('8mb')],
         ]);
 
-        $resultado = Storage::disk('img')->put('/', $request->photo);
-        // dump($resultado);
-        // dump($request);
-        $new_post_order = $request->post_order;
+        // Guardo la imagen
+        $imagePath = Storage::disk('img')->put('/', $request->photo);
         // Obtengo el último número de orden en la lista de posts
+        $new_post_order = $request->post_order;
         if ($request->post_order == 'top') {
-            // dump('Lo publica arriba, número mayor');
             $max_post_order = Post::max('post_order');
-            // dump($max_post_order);
             $new_post_order = $max_post_order + 1;
-            // dump($new_post_order);
         } else {
-            // dump('Lo publica abajo, número menor');
             $min_post_order = Post::min('post_order');
-            // dump($min_post_order);
             $new_post_order = $min_post_order - 1;
-            // dump($new_post_order);
         }
 
         // Guardar publicación
@@ -83,16 +76,15 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->content = $request->content;
-        $post->photo = $resultado;
+        $post->photo = $imagePath;
         $post->btn = $request->btn;
         $post->post_order = $new_post_order;
         $post->created_at = Carbon::now()->timestamp;
         $post->updated_at = null;
         $post->save();
-        // dump($post);
-        return to_route('team', ['posts' => Post::all()]);
-        // dd(Post::create(['id' => false, 'type' => 12, 'title' => 'Odontología', 'description' => 'Cuidamos tu sonrisa', 'content' => 'Contamos con el mejor equipo y profesionales del cuidado bucal.', 'photo' => 'dentista.png', 'btn' => 'Agendar revisión', 'post_order' => $new_post_order, 'created_at' => Carbon::now()->timestamp, 'updated_at' => Carbon::now()->timestamp])->attributesToArray());
+        return to_route('team');
     }
+
 
     /**
      * Display the specified resource.
@@ -108,8 +100,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $editPost = Post::find($post);
-        return view('post.create', ['post' => $editPost]);
+        return view('post.create', ['post' => $post]);
     }
 
     /**
@@ -118,7 +109,6 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         // Actualizar publicación
-        dump(Post::where('description', '=', null)->update(['description' => 'Más prestaciones']));
     }
 
     /**
@@ -129,4 +119,6 @@ class PostController extends Controller
         // Eliminar un registro
 
     }
+
+    
 }
